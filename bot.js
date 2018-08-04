@@ -27,6 +27,17 @@ client.on('ready', () => {
 });
 //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 const prefix = "*"
+
+client.on('message', message => {
+	if(message.content === prefix + 'joinplz') {
+		    const voiceChannel = message.member.voiceChannel;
+		    if (!voiceChannel) {
+      return message.reply(`يرجى أن تكون في قناة صوتيه أولا!`);
+    }
+		voiceChannel.join()
+	}
+});
+
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
